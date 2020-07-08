@@ -1,0 +1,95 @@
+<form [formGroup]="searchForm">
+  <p>Select Planets you want to search in:</p>
+  <div class="row">
+    <div class="col">
+      <label>Destination1</label>
+      <div class="btn-group" dropdown>
+        <input
+          dropdownToggle
+          readonly
+          type="text"
+          placeholder="Select Planet"
+          class="dropdown-toggle"
+          formControlName="destination1"
+        />
+        <ul *dropdownMenu class="dropdown-menu"
+            role="menu" aria-labelledby="button-basic">
+          <li role="menuitem" *ngFor="let planet of planets">
+            <a class="dropdown-item"
+               (click)="setSelectedPlanet('destination1', planet)">{{planet.name}}</a>
+          </li>
+        </ul>
+      </div>
+      <app-vehical-selection *ngIf="searchForm.get('destination1').value !== '' "
+                             [selectedPlanetName]="searchForm.get('destination1').value"
+                             [vehicalArr]="vehicles"></app-vehical-selection>
+    </div>
+    <div class="col">
+      <label>Destination2</label>
+      <div class="btn-group" dropdown>
+        <input
+          dropdownToggle
+          readonly
+          type="text"
+          placeholder="Select Planet"
+          class="dropdown-toggle"
+          formControlName="destination2"
+        />
+        <ul *dropdownMenu class="dropdown-menu"
+            role="menu" aria-labelledby="button-basic">
+          <li role="menuitem" *ngFor="let planet of planets">
+            <a class="dropdown-item"
+               (click)="setSelectedPlanet('destination2', planet)">{{planet.name}}</a>
+          </li>
+        </ul>
+      </div>
+      <app-vehical-selection *ngIf="searchForm.get('destination2').value !== '' " [vehicalArr]="vehicles"></app-vehical-selection>
+    </div>
+    <div class="col">
+      <label>Destination3</label>
+      <div class="btn-group" dropdown>
+        <input
+          dropdownToggle
+          readonly
+          type="text"
+          placeholder="Select Planet"
+          class="dropdown-toggle"
+          formControlName="destination3"
+        />
+        <ul *dropdownMenu class="dropdown-menu"
+            role="menu" aria-labelledby="button-basic">
+          <li role="menuitem" *ngFor="let planet of planets">
+            <a class="dropdown-item"
+               (click)="setSelectedPlanet('destination3', planet)">{{planet.name}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <label>Destination4</label>
+      <div class="btn-group" dropdown>
+        <input
+          dropdownToggle
+          readonly
+          type="text"
+          placeholder="Select Planet"
+          class="dropdown-toggle"
+          formControlName="destination4"
+        />
+        <ul *dropdownMenu class="dropdown-menu"
+            role="menu" aria-labelledby="button-basic">
+          <li role="menuitem" *ngFor="let planet of planets">
+            <a class="dropdown-item"
+               (click)="setSelectedPlanet('destination4', planet)">{{planet.name}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <div>
+        Time taken:0
+      </div>
+    </div>
+  </div>
+</form>
+
