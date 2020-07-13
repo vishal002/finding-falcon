@@ -2,10 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
+## Steps to run the project
+* `git clone`
+* `npm install`
+* `npm start`
+
 ## Steps to generate project and other components 
 
-* ```ng new finding-falcon --style=scss --routing=true```
-* 
+* `ng new finding-falcon --style=scss --routing=true`
 
 ## Development server
 
