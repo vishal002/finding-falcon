@@ -5,7 +5,7 @@ import { SearchComponent } from './search/search.component';
 import { ResultsComponent } from './results/results.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'index', pathMatch: 'full' },
+  { path: '', redirectTo: 'search', pathMatch: 'full' },
   { path: '', component: HomeComponent, children: [
     {path: 'search', component: SearchComponent},
     {path: 'results/:name/:timetaken', component: ResultsComponent}

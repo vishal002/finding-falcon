@@ -23,7 +23,8 @@ export class SearchComponent implements OnInit {
               private vehiclesService: VehiclesService,
               private searchService: SearchService,
               private authService: AuthService,
-              private router: Router) { }
+              private router: Router) {
+  }
 
   ngOnInit(): void {
     this.searchForm = this.fb.group({
