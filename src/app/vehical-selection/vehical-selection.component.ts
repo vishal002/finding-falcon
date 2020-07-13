@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-vehical-selection',
@@ -8,9 +8,16 @@ import { Component, OnInit, Input } from '@angular/core';
 export class VehicalSelectionComponent implements OnInit {
   @Input() vehicalArr;
   @Input() selectedPlanetName;
+  @Output() onVehicalSelection = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onCheckboxChange(event, param) {
+    if (event.target.checked) {
+      this.onVehicalSelection.emit(param);
+    }
   }
 
 }

@@ -1,7 +1,10 @@
 <div class=" my-4 p-3 d-flex flex-column align-items-sm-baseline">
   <div *ngFor="let vehicle of vehicalArr; let i=index">
     <div class="form-group form-check">
-      <input class="form-check-input" type="radio" name="{{selectedPlanetName}}i" id="exampleRadios1" value="option1">
+      <input class="form-check-input" type="radio" id="exampleRadios1"
+             name="{{selectedPlanetName}}i"
+             [disabled]="vehicle.total_no === 0"
+             [value]="vehicle.name" (change)="onCheckboxChange($event, vehicle);">
       <label class="form-check-label" for="exampleRadios1">
         {{vehicle.name}}{{'(' + vehicle.total_no + ')'}}
       </label>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-results',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./results.component.scss']
 })
 export class ResultsComponent implements OnInit {
+  public response: any;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) {
+    this.response = {};
+  }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe((data: any) => {
+        this.response.name = data.params.name;
+        this.response.timeTaken = data.params.timetaken;
+      }
+    );
   }
 
 }

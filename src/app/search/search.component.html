@@ -1,6 +1,6 @@
-<form [formGroup]="searchForm">
+<form [formGroup]="searchForm" (submit)="findFalcone()">
   <p>Select Planets you want to search in:</p>
-  <div class="row">
+  <div class="row" style="height: 300px">
     <div class="col">
       <label>Destination1</label>
       <div class="btn-group" dropdown>
@@ -22,7 +22,8 @@
       </div>
       <app-vehical-selection *ngIf="searchForm.get('destination1').value !== '' "
                              [selectedPlanetName]="searchForm.get('destination1').value"
-                             [vehicalArr]="vehicles"></app-vehical-selection>
+                             [vehicalArr]="vehicles"
+                             (onVehicalSelection)="getSelectedVehicalDetails($event, 'destination1')" ></app-vehical-selection>
     </div>
     <div class="col">
       <label>Destination2</label>
@@ -43,7 +44,10 @@
           </li>
         </ul>
       </div>
-      <app-vehical-selection *ngIf="searchForm.get('destination2').value !== '' " [vehicalArr]="vehicles"></app-vehical-selection>
+      <app-vehical-selection *ngIf="searchForm.get('destination2').value !== '' "
+                             [selectedPlanetName]="searchForm.get('destination2').value"
+                             [vehicalArr]="vehicles"
+                             (onVehicalSelection)="getSelectedVehicalDetails($event, 'destination2')" ></app-vehical-selection>
     </div>
     <div class="col">
       <label>Destination3</label>
@@ -64,6 +68,10 @@
           </li>
         </ul>
       </div>
+      <app-vehical-selection *ngIf="searchForm.get('destination3').value !== '' "
+                             [selectedPlanetName]="searchForm.get('destination3').value"
+                             [vehicalArr]="vehicles"
+                             (onVehicalSelection)="getSelectedVehicalDetails($event, 'destination3')" ></app-vehical-selection>
     </div>
     <div class="col">
       <label>Destination4</label>
@@ -84,11 +92,20 @@
           </li>
         </ul>
       </div>
+      <app-vehical-selection *ngIf="searchForm.get('destination4').value !== '' "
+                             [selectedPlanetName]="searchForm.get('destination4').value"
+                             [vehicalArr]="vehicles"
+                             (onVehicalSelection)="getSelectedVehicalDetails($event, 'destination4')" ></app-vehical-selection>
     </div>
     <div class="col">
       <div>
-        Time taken:0
+        Time taken: {{timetaken}}
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-center">
+      <button class="btn btn-primary" type="submit">Find Falcone!</button>
     </div>
   </div>
 </form>
