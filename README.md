@@ -4,13 +4,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Install Project
 
-* git clone `https://github.com/vishal002/finding-falcon.git`
+* `git clone https://github.com/vishal002/finding-falcon.git`
 * `npm install` (make sure you have node version 8+ globally installed)
 * `npm start`
 
 ## Steps to generate project and other components 
 
-* ``ng new finding-falcon --style=scss --routing=true``
+* `ng new finding-falcon --style=scss --routing=true`
 
 ## Development server
 
