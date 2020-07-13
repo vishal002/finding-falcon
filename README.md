@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
 ## Steps to run the project
-* `git clone`
+* `git clone https://github.com/vishal002/finding-falcon.git`
 * `npm install`
 * `npm start`
 
